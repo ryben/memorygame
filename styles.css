@@ -1,0 +1,48 @@
+input {
+    width: 30px;
+}
+
+#multiImgContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75%;
+    left: 30%;
+    position: absolute;
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-20%) translateY(-30%);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#sliderInterval {
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    height: 200px;
+    width: 20px;
+}
+
+#btnStart {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  height: 400px;
+  width: 400px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+}

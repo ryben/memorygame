@@ -1,97 +1,59 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="styles.css">
 		<title>Images</title>
 	</head>
 	<body>
-	    <input id="sliderInterval" type="range" min="0" max="2000" step="10" class="slider" oninput="onSliderChange(this.value)"/>
-	    <output id="sliderValueDisplay"></output>
-		<p>Interval</p>
+		<div id="root">
 
-		<button id="btnStart" onClick="start()" class="center" >Start</button>
+			<input id="sliderInterval" type="range" min="0" max="2000" step="10" class="slider" oninput="onSliderChange(this.value)"/>
+			<output id="sliderValueDisplay"></output>
+			<p>Interval</p>
 
-		<img id="imageView" onClick="stop()" class="center" src="">
-		<div id="multiImgContainer">
+			<button id="btnStart" onClick="start()" class="center" >Start</button>
+
+			<img id="imageView" onClick="stop()" class="center" src="">
+			<div id="multiImgContainer">
+			</div>
+
+			<br/>
+			<input id="radioOrdered" type="radio" name="sequence" checked="checked"><label for="radioOrdered">Ordered</label>
+			<br/>
+			<input id="radioRandom" type="radio" name="sequence"><label for="radioRandom">Random</label><br/>
+			<br/>
+
+			<br/>
+			<br/>
+			<br/>
+
+			<input id="rangeStart" type="text" value="1">
+			<a>Start</a>
+			<br/>
+			<input id="rangeEnd" type="text" value="10">
+			<a>End</a>
+
+			<br/>
+			<br/>
+			<br/>
+			<button id="btnShowAll" onClick="showAll()">Show All</button>
+			<br/>
+			<button id="btnShowOne" onClick="showOne()">Show One</button>
+
 		</div>
-
-		<br/>
-		<input id="radioOrdered" type="radio" name="sequence" checked="checked"><label for="radioOrdered">Ordered</label>
-		<br/>
-		<input id="radioRandom" type="radio" name="sequence"><label for="radioRandom">Random</label><br/>
-		<br/>
-
-		<br/>
-		<br/>
-		<br/>
-
-		<input id="rangeStart" type="text" value="1">
-		<a>Start</a>
-		<br/>
-		<input id="rangeEnd" type="text" value="10">
-		<a>End</a>
-
-		<br/>
-		<br/>
-		<br/>
-		<button id="btnShowAll" onClick="showAll()">Show All</button>
-		<br/>
-		<button id="btnShowOne" onClick="showOne()">Show One</button>
-
 
 	</body>
 </html>
 
-<style>
-	input {
-		width: 30px;
-	}
 
-	#multiImgContainer {
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-	    height: 75%;
-	    left: 30%;
-	    position: absolute;
-	    -moz-transform: translateX(-50%);
-	    -webkit-transform: translateX(-50%);
-	    transform: translateX(-20%) translateY(-30%);
-	}
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-	.center {
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-	    height: 75%;
-	    top: 50%;
-	    left: 50%;
-	    position: absolute;
-	    -moz-transform: translateX(-50%) translateY(-50%);
-	    -webkit-transform: translateX(-50%) translateY(-50%);
-	    transform: translateX(-50%) translateY(-50%);
-	}
+<!-- Load our React component. -->
+<script src="like_button.js"></script>
 
-	#sliderInterval {
-	    writing-mode: bt-lr; /* IE */
-	    -webkit-appearance: slider-vertical; /* WebKit */
-	    height: 200px;
-		width: 20px;
-	}
-
-	#btnStart {
-	  background-color: #4CAF50; /* Green */
-	  border: none;
-	  color: white;
-	  height: 400px;
-	  width: 400px;
-	  padding: 15px 32px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	  font-size: 36px;
-	}
-
-</style>
 
 <script>
 	var imgView = document.getElementById("imageView")
